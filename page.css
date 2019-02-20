@@ -13,6 +13,14 @@ body {
   margin: 0px 0px 10px 0px;
 }
 
+
+.projects {
+  width: 75%;
+  align-content: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .project {
   margin: 5px 5px 20px 5px;
 }
@@ -41,4 +49,12 @@ body {
 .icon-azure {
   width: 63px;
   height: 20px
+}
+
+.biography {
+  margin: 5px;
+}
+
+.biography-details {
+  margin: 0px 0px 0px 5px;
 }
