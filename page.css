@@ -14,15 +14,15 @@ body {
 }
 
 
-.projects {
-  width: 75%;
+.content {
+  width: 85%;
   align-content: center;
   margin-left: auto;
   margin-right: auto;
 }
 
 .project {
-  margin: 5px 5px 20px 5px;
+  margin: 0px 0px 20px 0px;
 }
 
 .project-title {
@@ -32,7 +32,7 @@ body {
 }
 
 .sub-text {
-  font-size: 15px;
+  font-size: 18px;
   text-align: center
 }
 
@@ -52,9 +52,18 @@ body {
 }
 
 .biography {
-  margin: 5px;
+  /* margin: 5px; */
 }
 
 .biography-details {
   margin: 0px 0px 0px 5px;
+}
+
+.section-title {
+  margin: 20px 0px 0px 0px;
+  font-size: 25px
+}
+
+ul {
+  margin-block-start: 5px
 }
