@@ -102,9 +102,9 @@ body {
 }
 
 .container-title-wrapper {
-  /* width: 100%; */
+  width: 100%;
   background-color: rgb(194, 194, 194);
-  padding: 15px;
+  padding: 10px 0px 10px 0px;
   
 }
 
