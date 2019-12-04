@@ -3,6 +3,8 @@ body {
   margin: 0px;
   overflow-x: hidden;
 }
+
+/* #c5c5c5 #335c81 #829191 #84a9c0 #279af1 */
 .title {
   font-size: 35px;
 }
@@ -94,6 +96,9 @@ body {
   margin-top: auto;
   margin-bottom: auto;
   background-color: #e4e4e4;
+  color: black;
+  border-radius: 8px;
+
 }
 
 .backtotop-link:hover {
@@ -103,7 +108,8 @@ body {
 
 .container-title-wrapper {
   width: 100%;
-  background-color: rgb(194, 194, 194);
+  color: white;
+  background-color: #335C81;
   padding: 10px 0px 10px 0px;
   
 }
@@ -119,8 +125,9 @@ body {
 
 }
 
-.projects-table {
-  width: 100%;
+.about-title {
+  font-weight: bold;
+  font-size: 18px;
 }
 
 .project-wrapper {
@@ -131,12 +138,15 @@ body {
 }
 
 .project-title {
+  padding: 5px 5px;
+  border-radius: 8px;
   font-size: 20px;
   display: flex;
   justify-content: space-between;
   margin-bottom: 5px;
   font-weight: bold;
-  
+  background-color: #84a9c0;
+  /* #c5c5c5 #335c81 #829191 #84a9c0 #279af1 */
 
 }
 
@@ -149,8 +159,9 @@ body {
   padding: 5px;
   border-radius: 8px;
   color: -webkit-link;
-    cursor: pointer;
-    text-decoration: underline;
+  cursor: pointer;
+  text-decoration: underline;
+
 }
 
 .project-description {
