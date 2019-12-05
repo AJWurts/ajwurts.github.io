@@ -1,7 +1,8 @@
 <html>
 
 <head>
-    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="shortcut icon" href="./favicon.ico">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
     <!-- <link rel='stylesheet' type='text/css' href='https://ajwurts.github.io/page.css' /> -->
     <link rel='stylesheet' type='text/css' href='new_page.css' />
     <title>Alex Wurts</title>
@@ -9,40 +10,43 @@
 
 <body>
     <div id='top'></div>
-    <div class='topbar flex'>
-        <div>
-            <div class='title'>
-                Alex Wurts
-            </div>
+    <div class='topbar-wrapper'>
+        <div class='topbar flex'>
             <div>
-                Programmer and Private Pilot
+                <div class='title'>
+                    Alex Wurts
+                </div>
+                <div>
+                    Programmer and Private Pilot
+                </div>
             </div>
-        </div>
-        <div class='topbar-buttons flex'>
-            <div class='topbar-link' onclick='window.location.href="#biography"'>
-                About Me
-            </div>
-            <div class='topbar-link' onclick='window.location.href="#projects"'>
-                Projects
-            </div>
-            <div class='topbar-link' onclick='window.location.href="#experience"'>
-                Experience
-            </div>
-            <div class='topbar-link-instalogo topbar-link' style="padding: 6px 10px 7px 10px"
-                onclick='window.open("https:\/\/www.instagram.com/programmingpilot/")'>
-                <img id="img" class="style-scope yt-img-shadow" alt="" height="30" width="30"
-                    src="./images/IG_Glyph_Fill.png">
-            </div>
-            <div class='topbar-link-instalogo topbar-link' style="padding: 9px 10px 11px 10px"
-                onclick='window.open("https:\/\/github.com/ajwurts/")'>
-                <img id="img" class="style-scope yt-img-shadow" alt="" height="23" width="23" src="./images/github.png">
-            </div>
-            <div class='topbar-link-instalogo topbar-link' style="padding: 10px 10px 11px 10px"
-                onclick='window.open("https:\/\/www.youtube.com/channel/UC-dU4MIIpMOjTzn55ALJIaA")'>
-                <img id="img" class="style-scope yt-img-shadow" alt="" height="22" width="32"
-                    src="./images/youtube.png">
-            </div>
+            <div class='topbar-buttons flex'>
+                <div class='topbar-link' onclick='window.location.href="#biography"'>
+                    About Me
+                </div>
+                <div class='topbar-link' onclick='window.location.href="#projects"'>
+                    Projects
+                </div>
+                <div class='topbar-link' onclick='window.location.href="#experience"'>
+                    Experience
+                </div>
+                <div class='topbar-link-instalogo topbar-link' style="padding: 6px 10px 7px 10px"
+                    onclick='window.open("https:\/\/www.instagram.com/programmingpilot/")'>
+                    <img id="img" class="style-scope yt-img-shadow" alt="" height="30" width="30"
+                        src="./images/IG_Glyph_Fill.png">
+                </div>
+                <div class='topbar-link-instalogo topbar-link' style="padding: 9px 10px 11px 10px"
+                    onclick='window.open("https:\/\/github.com/ajwurts/")'>
+                    <img id="img" class="style-scope yt-img-shadow" alt="" height="23" width="23"
+                        src="./images/github.png">
+                </div>
+                <div class='topbar-link-instalogo topbar-link' style="padding: 10px 10px 11px 10px"
+                    onclick='window.open("https:\/\/www.youtube.com/channel/UC-dU4MIIpMOjTzn55ALJIaA")'>
+                    <img id="img" class="style-scope yt-img-shadow" alt="" height="22" width="32"
+                        src="./images/youtube.png">
+                </div>
 
+            </div>
         </div>
     </div>
 
@@ -60,44 +64,52 @@
             </div>
         </div>
     </div>
-    <div class='content'>
-        <div style="display: flex">
+    <div class='content' >
 
-            <div>
-                <div class='about-title'>Programming</div>
-                <p style="margin-top: 5px">
-                    &emsp;I am Computer Science Major and Data Science at Worcester Polytechnic Institute. Throughout my
-                    time in college I have explored many areas from Deep Learning to Front End development. I am always
-                    looking for new areas to explore and learn. When I start something I don't stop until reach the
-                    finish.
-                    &emsp;
-                </p>
-                <div class='about-title'>Flying</div>
-                <p>
-                    &emsp;I am a newly minted Private Pilot. I trained at Hanscom Airport in Bedford MA flying Piper
-                    Warrior IIIs. I eventually want to buy or build a small bush plane and explore the US.
-                </p>
+        <div class=' aboutme' style="margin-top: 0px; margin-bottom: 0px">
+            <div style="display: flex">
 
+                <div>
+                    <div id='programming' class='about-title'>Programming</div>
+                    <p style="margin-top: 5px">
+                        &emsp;I am Computer Science Major and Data Science at Worcester Polytechnic Institute.
+                        Throughout my
+                        time in college I have explored many areas from Deep Learning to Front End development. I am
+                        always
+                        looking for new areas to explore and learn.
+                        &emsp;
+                    </p>
+                    <div id='flying' class='about-title'>Flying</div>
+                    <p>
+                        &emsp;I am a Private Pilot. I trained at Hanscom Airport in Bedford MA flying Piper Warrior
+                        IIIs. I
+                        eventually want to buy or build a small bush plane and explore the US.
+                    </p>
+
+                </div>
+                <img style="border-radius: 8px" src='./images/profile_picture.jpeg' width='200px' height='200px' />
             </div>
-            <img style="border-radius: 8px" src='./images/profile_picture.jpeg' width='200px' height='200px' />
+            <div>
+                <div id='tutorials' class='about-title'>Video Tutorials</div>
+                <p>
+                    &emsp;Knowing how to program can change someones life. Learning how to program can be incredibly
+                    challenging, and I know my knowledge could help something learn faster. I try to do what I can to
+                    make
+                    learning programming that much more achieveable. I find after I teach a subject I understand it much
+                    more than before.
+                </p>
+                <p>
+                    &emsp;I create video tutorials to help pass on my knowledge to allow as many people as possible to
+                    learn
+                    the awesome world of programming.
+                </p>
+            </div>
+
+
+
+
+
         </div>
-        <div>
-            <div class='about-title'>Video Tutorials</div>
-            <p>
-                &emsp;Knowing how to program can change someones life. Everyone who has gone through the effort to
-                learn has a duty to teach others. Not only does it help the learner, but also the teacher. Teaching
-                a subject is the best way to master it.
-            </p>
-            <p>
-                &emsp;I create video tutorials to help pass on my knowledge to allow as many people as possible to
-                program. Programming is extremely rewarding when given enough time.
-            </p>
-        </div>
-
-
-
-
-
     </div>
 
     <!-- //////// EXPERIENCE -->
@@ -111,7 +123,7 @@
         </div>
     </div>
     <div class="content">
-        <div class='project'>
+        <div id='senior-thesis' class='project'>
             <div class='project-title' style="display: block">
                 <div>
                     <b> Senior Thesis Intern</b>
@@ -124,22 +136,25 @@
                 </div>
             </div>
             <div class='project-description'>
-                <div style="margin: 4px"></div>
-                <p>
-                    &emsp;Tauopathies are hypothesized to be a primary cause of Alzheimer's disease. Labeling tau in
-                    whole
-                    slide
+                <div style="margin: 4px">
+                    &emsp;Tauopathies are hypothesized to be a primary cause of Alzheimer's
+                    disease. Labeling tau in whole slide
                     images is a task requiring high expertise and lots of time. Project successfully developed a Deep
-                    Learning solution to segment and quantify important cells in brain scans. It will save doctors many
-                    ours
+                    Learning solution to segment and quantify important cells in brain scans. It will save doctors
+                    many ours
                     of work and enable future quantitative research on the results. Utilizes <b>PyTorch</b> on MIT's
                     supercomputer
                     for preprocessing, training, and evaluating models.
-                </p>
-
+                </div>
+            </div>
+            <div class='project-description'>
+                <div style="margin: 4px">
+                    <b>Technology:</b> Python, Pandas, Pillow, Numpy, PyTorch, Sklearn, Slurm, MIT LL Super Computer,
+                    Jupyter Notebooks
+                </div>
             </div>
         </div>
-        <div class='project'>
+        <div id='mitll-intern' class='project'>
             <div class='project-title' style="display: block">
                 <div>
                     <b> Deep Learning Intern</b>
@@ -159,8 +174,14 @@
                 and evaluate many data set and model configurations. Developed innovative image labeling application
                 using deep neural network which reduced the amount of time to label a dataset by five times.
             </div>
+            <div class='project-description'>
+                <div style="margin: 4px">
+                    <b>Technology:</b> Python, Pandas, Pillow, Numpy, PyTorch, Sklearn, Slurm, MIT LL Super Computer,
+                    Jupyter Notebooks
+                </div>
+            </div>
         </div>
-        <div class='project'>
+        <div id='olympus-intern' class='project'>
             <div class='project-title' style="display: block">
                 <div>
                     <b>Software Engineer Intern</b>
@@ -181,6 +202,11 @@
                 used across many platforms. Build with React stylized with Material UI for the frontend and Nodejs,
                 Expressjs, and MongoDB for the backend on top of the Microsoft Azure environment.
             </div>
+            <div class='project-description'>
+                <div style="margin: 4px">
+                    <b>Technology:</b> Javascript, React, Node, MongoDB, Microsoft Azure, Material UI, Express,
+                </div>
+            </div>
         </div>
     </div>
 
@@ -198,9 +224,9 @@
 
     </div>
     <div class="content">
-        <div class='project-wrapper'>
+        <div id='weathervis' class='project-wrapper'>
             <div class='project-title'>
-                <span style="margin-top: auto; margin-bottom: auto">Pilot Weather Visualizations</span>
+                <span class='project-title-only' style="margin-top: auto; margin-bottom: auto">Pilot Weather Visualizations</span>
                 <span class='project-link' onclick='window.open("https:\/\/pilotweathervis.com")'>
                     PilotWeatherVis.com
                 </span>
@@ -211,7 +237,7 @@
             <div class='project-description'>
                 <div class='project-description-text'>
                     <p style="margin-top: 0px; font-size: 18px;">
-                        <b>Role: Creator</b>
+                        <b>Role:</b>Creator
                     </p>
                     <p>
                         &emsp;Created user interface to help training pilots understand confusing weather forecasting
@@ -220,7 +246,7 @@
                         searchable for any airport in the US. Data sourced from the Aviation Weather Center.
                     </p>
                     <p>
-                        <b>Skills</b>: React, Node, JS, REST API, Express, D3js, NWS ADDS API, Github,
+                        <b>Skills</b>: React, Node, JS, REST API, Express, D3js, NWS ADDS API, Github
                     </p>
                 </div>
                 <div class='project-description-image'>
@@ -232,13 +258,12 @@
                 </div>
 
             </div>
-            <hr />
 
 
         </div>
-        <div class='project-wrapper'>
+        <div id='nnimplementation' class='project-wrapper'>
             <div class='project-title'>
-                <span style="margin-top: auto; margin-bottom: auto"> Neural Network Implementation</span>
+                <span class='project-title-only' style="margin-top: auto; margin-bottom: auto"> Neural Network Implementation</span>
 
                 <span class='project-link' onclick='window.open("https:\/\/github.com/ajwurts/Neural_Network")'>
                     Code - Github
@@ -247,7 +272,7 @@
             <div class='project-description'>
                 <div class='project-description-text'>
                     <p style="margin-top: 0px; font-size: 18px;">
-                        <b>Role: Creator</b>
+                        <b>Role:</b> Creator
                     </p>
                     <p>
                         &emsp;Implemented a neural network from scratch that trains on the mnist data set. It is a
@@ -270,10 +295,9 @@
                 </div>
             </div>
         </div>
-        <hr />
-        <div class='project-wrapper'>
+        <div id='bestroutes' class='project-wrapper'>
             <div class='project-title'>
-                <span style="margin-top: auto; margin-bottom: auto">Best Routes</span>
+                <span class='project-title-only' style="margin-top: auto; margin-bottom: auto">Best Routes</span>
                 <span class='project-link' onclick='window.open("https:\/\/www.BestRoutes.io")'>
                     BestRoutes.io
                 </span>
@@ -281,14 +305,13 @@
             <div class='project-description'>
                 <div class='project-description-text'>
                     <p style="margin-top: 0px; font-size: 18px;">
-                        <b>Role: Creator</b>
+                        <b>Role:</b> Creator
                     </p>
                     <p>
                         &emsp;Solely developed a full stack web app and connected Android app to create a
                         user-sourced database of the best rides and runs in a certain area. Utilizes a React,
                         Express, Node, MongoDB Stack. Retrives data automatically from Strava API, and Goodgle API.
                         Code available upon request.
-
                     </p>
                     <p>
                         <b>Skills</b>: Reactjs, Nodejs, Expressjs, MongoDB, Google Cloud Platform, Leaflet Maps,
@@ -305,10 +328,9 @@
             </div>
 
         </div>
-        <hr />
-        <div class='project-wrapper'>
+        <div id='android-solitaire' class='project-wrapper'>
             <div class='project-title'>
-                <span style="margin-top: auto; margin-bottom: auto"> Android Solitaire</span>
+                <span class='project-title-only'  style="margin-top: auto; margin-bottom: auto"> Android Solitaire</span>
                 <span class='project-link'
                     onclick='window.open("https:\/\/play.google.com/store/apps/details?id=com.sigpit.alexwurts.solitare&hl=en_US")'>
                     Google Play Store
@@ -320,7 +342,7 @@
             <div class='project-description'>
                 <div class='project-description-text'>
                     <p style="margin-top: 0px; font-size: 18px;">
-                        <b>Role: Creator</b>
+                        <b>Role:</b> Creator
                     </p>
                     <p>
                         &emsp;Developed Solitaire to create a version with no ads. Released on Google Play. Follow link
@@ -342,10 +364,9 @@
             </div>
 
         </div>
-        <hr />
         <div id='cira' class='project-wrapper'>
             <div class='project-title'>
-                <span style="margin-top: auto; margin-bottom: auto"> CIRA: Chromosome Image Recognition Algorithm</span>
+                <span class='project-title-only' style="margin-top: auto; margin-bottom: auto"> CIRA: Chromosome Image Recognition Algorithm</span>
                 <span class='project-link' onclick='window.open("https:\/\/github.com/ajwurts/CIRA_ML")'>
                     Code - Github
                 </span>
@@ -353,7 +374,7 @@
             <div class='project-description'>
                 <div class='project-description-text'>
                     <p style="margin-top: 0px; font-size: 18px;">
-                        <b>Role: Group Member</b>
+                        <b>Role:</b> Group Member
                     </p>
                     <p>
                         &emsp;Developed machine learning algorithm to predict health of new cells. Used K-Means to
@@ -362,7 +383,7 @@
                         Logstic Regression was 87%.
                     </p>
                     <p>
-                        <b>Skills</b>: Python, Numpy, Matplotlib, Scikit-learn, Scipy, Anaconda, Pillow,
+                        <b>Skills</b>: Python, Numpy, Matplotlib, Scikit-learn, Scipy, Anaconda, Pillow
                     </p>
                 </div>
                 <div class='project-description-image'>
@@ -376,10 +397,10 @@
                 </div>
             </div>
         </div>
-        <hr />
         <div id='ridevis' class='project-wrapper'>
             <div class='project-title'>
-                <span style="margin-top: auto; margin-bottom: auto"> RideVis: An Improved Strava Visualization</span>
+                <span class='project-title-only'style="margin-top: auto; margin-bottom: auto">
+                     RideVis: An Improved Strava Visualization</span>
                 <span class='project-link' onclick='window.open("http:\/\/alexwurts.com/RideVis")'>
                     Ride Vis
                 </span>
@@ -390,7 +411,7 @@
             <div class='project-description'>
                 <div class='project-description-text'>
                     <p style="margin-top: 0px; font-size: 18px;">
-                        <b>Role: Created for Data Vis Class</b>
+                        <b>Role:</b> Created for Data Vis Class
                     </p>
                     <p>
                         &emsp;Re-made the Strava Profile Visualization. Aggregates my strava ride data using python into
