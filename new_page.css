@@ -56,16 +56,10 @@ p {
   background-color: white;
 }
 
-.topbar-link:first {
-  border-radius: 8px;
-  
-}
-
 .topbar-link:hover {
   background-color: rgb(92, 92, 92);
   background-color: #335C81;
   color:white
-
 }
 
 .topbar-link-instalogo:hover {
@@ -83,8 +77,6 @@ p {
   position: absolute;
   transform: translate(10px, -40px);
   color: white;
-
-
 }
 
 .content {
@@ -155,12 +147,8 @@ p {
 }
 
 .about-title {
-   /* font-family: "Roboto script=all rev=1";  */
-   /* font-weight: 900; */
-    /* font-style: normal; */
   font-weight: bold;
   font-size: 23px;
-  /* background-color: #84a9c0; */
   border-radius: 8px;
   padding: 5px;
   margin: 5px;
@@ -169,8 +157,7 @@ p {
 
 }
 
-.aboutme-wrapper {
-}
+
 
 .aboutme {
   background-color: white;
@@ -215,19 +202,11 @@ p {
 
 }
 
-.project-image-wrapper {
-
-}
 
 .project-link {
-  /* cursor: pointer; */
   padding: 5px;
   border-radius: 8px;
-  /* color: -webkit-link; */
   cursor: pointer;
-  /* text-decoration: underline; */
-
-
 }
 
 .project-description {
@@ -238,8 +217,6 @@ p {
 }
 
 .project-link:hover {
-  /*transform: translate(1%, 1%);*/
-  /* background-color: lightblue; */
   background-color: #aaaaaa;
 
 }
