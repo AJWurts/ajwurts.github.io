@@ -2,7 +2,6 @@ body {
   font-family: 'Roboto', sans-serif;
   margin: 0px;
   overflow-x: hidden;
-  background-color: #c9cdd1
 }
 
 p {
@@ -121,21 +120,38 @@ p {
 
 .container-title-wrapper {
   width: 100%;
-  color: white;
-  background-color: #335C81;
+  color: black;
   padding: 10px 0px 10px 0px;
   
 }
-
 .container-title {
+  justify-content: space-between;
+  display: flex;
   max-width: 800px;
   margin-left: auto;
   margin-right: auto;
+  background-color: #cccccc;
+  padding: 5px;
+  border-radius: 8px;
+
+}
+
+.title-text {
+
   font-size: 40px;
+}
+
+.container-title-sub {
   justify-content: space-between;
   display: flex;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
 
-
+.goals-section {
+  font-size: 30px;
+  color: lightslategray;
 }
 
 .about-title {
@@ -210,7 +226,6 @@ p {
   /* color: -webkit-link; */
   cursor: pointer;
   /* text-decoration: underline; */
-  background-color: #e2e2e2;
 
 
 }
@@ -223,9 +238,9 @@ p {
 }
 
 .project-link:hover {
-  transform: translate(1%, 1%);
+  /*transform: translate(1%, 1%);*/
   /* background-color: lightblue; */
-  background-color: #335C81;
+  background-color: #aaaaaa;
 
 }
 .project-image {
@@ -262,6 +277,22 @@ p {
   margin: 20px 0px 0px 0px;
   font-size: 25px
 }
+
 ul {
-  margin-block-start: 5px
+  margin-block-start: 5px;
+  margin-block-end: 0px;
+}
+.goal-list ol li {
+  counter-increment: list;
+  list-style-type: none;
+  position: relative;
+}
+
+.goal-list ol li::before {
+  color: black;
+  content: counter(list) ;
+  left: -32px;
+  position: absolute;
+  text-align: right;
+  width: 26px;
 }
