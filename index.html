@@ -1,524 +1,285 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="/favicon.ico"/>
-    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
-    <!-- <link rel='stylesheet' type='text/css' href='https://ajwurts.github.io/page.css' /> -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-151866338-3"></script>
     <script>
-      window.dataLayer = window.dataLayer || [];
-
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-
-      gtag('js', new Date());
-
-      gtag('config', 'UA-151866338-3');
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'UA-151866338-3');
     </script>
     <link rel='stylesheet' type='text/css' href='new_page.css'/>
-    <title>Alex Wurts</title>
+    <title>Alex Wurts - Software Engineer</title>
 </head>
 
 <body>
-<div id='top'></div>
-<div class='topbar-wrapper'>
-    <div class='topbar flex'>
-        <div>
-            <div class='title'>
-                Alex Wurts
-            </div>
-            <div>
-                Programmer and Private Pilot
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-content">
+            <a href="#top" class="nav-logo">Alex Wurts</a>
+            <div class="nav-links">
+                <a href="#articles" class="nav-link">Articles</a>
+                <a href="#experience" class="nav-link">Experience</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="https://github.com/ajwurts/" target="_blank" class="nav-link nav-icon" aria-label="GitHub">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                </a>
+                <a href="https://linkedin.com/in/alexwurts" target="_blank" class="nav-link nav-icon" aria-label="LinkedIn">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                </a>
+                <a href="https://x.com/AlexWurts" target="_blank" class="nav-link nav-icon" aria-label="X">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                </a>
             </div>
         </div>
-        <div class='topbar-buttons flex'>
-            <div class='topbar-link' onclick='window.location.href="#biography"'>
-                About Me
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="top" class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">Alex Wurts</h1>
+            <p class="hero-subtitle">Engineering at <span class="highlight">Coworker.ai</span></p>
+            <p class="hero-tagline">Building AI-powered products that transform how work is done</p>
+            <div class="hero-cta">
+                <a href="#experience" class="btn btn-primary">View My Work</a>
+                <a href="https://www.linkedin.com/in/alexander-wurts/" target="_blank" class="btn btn-secondary">Connect on LinkedIn</a>
             </div>
-            <div class='topbar-link' onclick='window.location.href="#projects"'>
-                Projects
+        </div>
+    </section>
+
+    <!-- Articles & Content Section -->
+    <section id="articles" class="section">
+        <div class="container">
+            <h2 class="section-title">Articles & Research</h2>
+            <div class="articles-grid">
+                <!-- Research Paper -->
+                <a href="https://ieeexplore.ieee.org/document/9175832" target="_blank" class="article-card featured">
+                    <span class="article-tag">IEEE Research Paper</span>
+                    <h3 class="article-title">Segmentation of Tau Stained Alzheimer's Brain Tissue Using CNNs</h3>
+                    <p class="article-description">Comparing FCN, SegNet, and U-Net architectures for segmenting tau pathology in Alzheimer's disease brain tissue samples.</p>
+                    <span class="article-link">Read Paper →</span>
+                </a>
+
+                <!-- LinkedIn Posts -->
+                <a href="https://www.linkedin.com/posts/alexander-wurts_i-recently-conducted-a-technical-interview-activity-7335774191511617538-n9y8" target="_blank" class="article-card">
+                    <span class="article-tag">LinkedIn</span>
+                    <h3 class="article-title">AI Tools in Interviews: A Lesson in Engineering Judgment</h3>
+                    <p class="article-description">Why AI tools amplify what you already know, but can't substitute for genuine engineering judgment and problem-solving skills.</p>
+                    <span class="article-link">Read Post →</span>
+                </a>
+
+                <a href="https://www.linkedin.com/posts/alexander-wurts_why-you-need-to-multi-task-your-development-activity-7333995647764754432-Nn-Q" target="_blank" class="article-card">
+                    <span class="article-tag">LinkedIn</span>
+                    <h3 class="article-title">How to Multi-Task Your Development with AI Agents</h3>
+                    <p class="article-description">A parallel development approach using AI coding agents to accomplish 5x more tasks by focusing on high-level thinking instead of low-level code.</p>
+                    <span class="article-link">Read Post →</span>
+                </a>
             </div>
-            <div class='topbar-link' onclick='window.location.href="#experience"'>
-                Experience
-            </div>
-            <div class='topbar-link' onclick='window.location.href="http://www.alexwurts.com/Articles"'>
-                Coding Articles
-            </div>
-            <div class='topbar-link-instalogo topbar-link' style="padding: 6px 10px 7px 10px"
-                 onclick='window.open("https:\/\/www.instagram.com/programmingpilot/")'>
-                <img id="img" class="style-scope yt-img-shadow" alt="" height="30" width="30"
-                     src="./images/IG_Glyph_Fill.png">
-            </div>
-            <div class='topbar-link-instalogo topbar-link' style="padding: 9px 10px 11px 10px"
-                 onclick='window.open("https:\/\/github.com/ajwurts/")'>
-                <img id="img" class="style-scope yt-img-shadow" alt="" height="23" width="23"
-                     src="./images/github.png">
-            </div>
-            <div class='topbar-link-instalogo topbar-link' style="padding: 10px 10px 11px 10px"
-                 onclick='window.open("https:\/\/www.youtube.com/channel/UC-dU4MIIpMOjTzn55ALJIaA")'>
-                <img id="img" class="style-scope yt-img-shadow" alt="" height="22" width="32"
-                     src="./images/youtube.png">
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="section section-alt">
+        <div class="container">
+            <h2 class="section-title">Experience</h2>
+
+            <!-- Coworker.ai - Engineering Manager -->
+            <div class="experience-card featured">
+                <div class="experience-header">
+                    <div class="experience-title-group">
+                        <h3 class="experience-title">Engineering Manager</h3>
+                        <span class="experience-company">Coworker.ai</span>
+                    </div>
+                    <div class="experience-meta">
+                        <span class="experience-date">Jul 2025 - Present</span>
+                        <span class="experience-location">Boston, MA</span>
+                    </div>
+                </div>
+                <div class="experience-content">
+                    <ul class="experience-list">
+                        <li>Grew engineering team from 2 to 10 engineers while maintaining a high-performance culture</li>
+                        <li>Wear both hats: writing code and managing people, because modern engineering demands both</li>
+                    </ul>
+                    <div class="tech-stack">
+                        <span class="tech-tag">AI/ML</span>
+                        <span class="tech-tag">Full Stack</span>
+                        <span class="tech-tag">Agents/Tooling</span>
+                        <span class="tech-tag">Applied LLM</span>
+                        <span class="tech-tag">GoLang</span>
+                    </div>
+                </div>
             </div>
 
-        </div>
-    </div>
-</div>
-
-<img src='./images/plane_on_tarmac.jpg' class='front-picture'>
-<div class='location-text'>Pittsfield Municipal Airport <br/> Pittsfield, MA</div>
-</img>
-
-<!-- ////// BIOGRAPHY -->
-<div id="biography"></div>
-<div class='container-title-wrapper'>
-    <div class="container-title title-text">
-        About Me
-        <div class='backtotop-link' onclick='window.location.href="#top"'>
-            Top
-        </div>
-    </div>
-</div>
-<div class='content'>
-
-    <div class=' aboutme' style="margin-top: 0px; margin-bottom: 0px">
-        <div style="display: flex">
-
-            <div>
-                <div id='programming' class='about-title'>Programming</div>
-                <p style="margin-top: 5px">
-                    &emsp;I am a Computer Science Major and Data Science at Worcester Polytechnic Institute.
-                    Throughout my time in college, I have explored many areas from Deep Learning to Front End
-                    development. I am
-                    always looking for new areas to explore and learn.
-                    &emsp;
-                </p>
-                <div id='flying' class='about-title'>Flying</div>
-                <p>
-                    &emsp;I am a Private Pilot. I trained at Hanscom Airport in Bedford MA flying Piper Warrior
-                    IIIs. I eventually want to buy or build a small bush plane and explore the US.
-                </p>
-            </div>
-            <img style="border-radius: 8px" src='./images/profile_picture.jpeg' width='200px' height='200px'/>
-        </div>
-        <div>
-            <div id='tutorials' class='about-title'>Programming Tutorials</div>
-            <p>
-                &emsp;Knowing how to program can change someone's life. Learning how to program can be incredibly
-                challenging, and I know my knowledge could help someone learn faster. I try to do what I can to
-                make
-                learning programming more achievable. I find after I teach a subject I understand it much
-                better.
-            </p>
-            <p>
-                &emsp;I create video tutorials and articles to help pass on my knowledge to allow as many people as
-                possible to learn the awesome world of programming.
-            </p>
-        </div>
-    </div>
-</div>
-
-<!-- //////// EXPERIENCE ////////// -->
-<div id="experience"></div>
-<div class='container-title-wrapper'>
-    <div>
-        <div class="container-title title-text">
-            Experience
-            <div class='backtotop-link' onclick='window.location.href="#top"'>
-                Top
-            </div>
-        </div>
-<!--        <div class="container-title">-->
-<!--            <div>-->
-<!--                About why I choose the jobs maybe? Goals for career.-->
-<!--                <ol>-->
-<!--                    <li>Improve Programming skills</li>-->
-<!--                    <li>Learn new Libraries, Technologies, and Languages</li>-->
-<!--                    <li>Connect m</li>-->
-<!--                </ol>-->
-<!--            </div>-->
-<!--            &lt;!&ndash;            <div>&ndash;&gt;-->
-<!--            &lt;!&ndash;            </div>&ndash;&gt;-->
-<!--        </div>-->
-    </div>
-</div>
-<div class="content">
-    <div id='senior-thesis' class='project'>
-        <div class='project-title' style="display: block">
-            <div>
-                <b> Senior Thesis Intern</b>
-                <span style="float: right">August 2019 - October 2019</span>
+            <!-- Coworker.ai - Senior Software Engineer -->
+            <div class="experience-card featured">
+                <div class="experience-header">
+                    <div class="experience-title-group">
+                        <h3 class="experience-title">Founding Software Engineer</h3>
+                        <span class="experience-company">Coworker.ai</span>
+                    </div>
+                    <div class="experience-meta">
+                        <span class="experience-date">Jul 2022 - Jul 2025</span>
+                        <span class="experience-location">Boston, MA</span>
+                    </div>
+                </div>
+                <div class="experience-content">
+                    <ul class="experience-list">
+                        <li>First employee—helped build the company from zero to a $13M seed round</li>
+                    </ul>
+                    <div class="tech-stack">
+                        <span class="tech-tag">AI/ML</span>
+                        <span class="tech-tag">Full Stack</span>
+                        <span class="tech-tag">Agents/Tooling</span>
+                        <span class="tech-tag">Applied LLM</span>
+                        <span class="tech-tag">GoLang</span>
+                    </div>
+                </div>
             </div>
 
-            <div>
-                MIT Lincoln Laboratory and WPI
-                <span style="float: right">Lexington, MA</span>
-            </div>
-        </div>
-        <div class='project-description'>
-            <div style="margin: 4px">
-                &emsp; Tauopathies are hypothesized to be a primary cause of Alzheimer's
-                disease. Labeling tau proteins in a brain image is a task requiring high expertise and significant
-                time. My project successfully developed a Deep Learning solution to segment and quantify important
-                cells in brain scans.
-                <ul>
-                    <li>
-                        Built using the SegNet Convolutional Neural Network architecture
-                    </li>
-                    <li>
-                        Final model saves Doctors many hours of labeling and enables improved diagnosis of the disease.
-                    </li>
-                    <li>
-                        Wrote parallelized code on the MIT
-                        supercomputer to process and stitch together 10 billion pixel brain scans in under 30 minutes.
-                    </li>
-
-                </ul>
-            </div>
-        </div>
-        <div class='project-description'>
-            <div style="margin: 4px">
-                <b>Technology:</b> Python, Pandas, Pillow, Numpy, PyTorch, Sklearn, Slurm, MIT LL Super Computer,
-                Jupyter Notebooks, Anaconda, Convolutional Neural Networks, Matplotlib
-            </div>
-        </div>
-    </div>
-    <div id='mitll-intern' class='project'>
-        <div class='project-title' style="display: block">
-            <div>
-                <b>Deep Learning Intern</b>
-                <span style="float: right">May 2019 - August 2019</span>
+            <!-- The Routing Company -->
+            <div class="experience-card">
+                <div class="experience-header">
+                    <div class="experience-title-group">
+                        <h3 class="experience-title">Apps Tech Lead</h3>
+                        <span class="experience-company">The Routing Company (formerly Routable AI)</span>
+                    </div>
+                    <div class="experience-meta">
+                        <span class="experience-date">Mar 2020 - Jul 2022</span>
+                        <span class="experience-location">Boston, MA</span>
+                    </div>
+                </div>
+                <div class="experience-content">
+                    <ul class="experience-list">
+                        <li>Founding team member that started and led a team of 6 engineers to build driver and rider apps from scratch</li>
+                        <li>Scaled apps to 1k daily users and serviced 100,000+ trips</li>
+                        <li>Worked in a fast-paced sprint team environment across the entire stack</li>
+                        <li>Designed and developed significant portions of the company's backend codebase, connecting them to the dashboard and mobile applications</li>
+                    </ul>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Kubernetes</span>
+                        <span class="tech-tag">Docker</span>
+                        <span class="tech-tag">Go</span>
+                        <span class="tech-tag">Flutter</span>
+                        <span class="tech-tag">React</span>
+                    </div>
+                </div>
             </div>
 
-            <div>
-                MIT Lincoln Laboratory
-                <span style="float: right">Lexington, MA</span>
+            <!-- MIT Lincoln Lab - Senior Thesis -->
+            <div class="experience-card">
+                <div class="experience-header">
+                    <div class="experience-title-group">
+                        <h3 class="experience-title">Senior Thesis Intern</h3>
+                        <span class="experience-company">MIT Lincoln Laboratory & WPI</span>
+                    </div>
+                    <div class="experience-meta">
+                        <span class="experience-date">Aug 2019 - Oct 2019</span>
+                        <span class="experience-location">Lexington, MA</span>
+                    </div>
+                </div>
+                <div class="experience-content">
+                    <ul class="experience-list">
+                        <li>Developed a Deep Learning solution to segment and quantify tau proteins in brain scans for Alzheimer's research</li>
+                        <li>Built using the SegNet Convolutional Neural Network architecture</li>
+                        <li>Wrote parallelized code on MIT supercomputer to process 10 billion pixel brain scans in under 30 minutes</li>
+                    </ul>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">PyTorch</span>
+                        <span class="tech-tag">CNNs</span>
+                        <span class="tech-tag">Slurm</span>
+                    </div>
+                </div>
             </div>
-        </div>
-        <div class='project-description'>
-            <ul>
-                <li>
-                    Implemented state of art deep neural networks for the person re-identification in a camera
-                    surveillance system problem.
-                </li>
-                <li>
-                    Used a supercomputer to
-                    train
-                    and evaluate many data set and model configurations.
-                </li>
-                <li>
-                    Developed innovative image labeling application
-                    using deep neural networks
-                </li>
-                <li>
-                    Reduced time to label a dataset by 5 times, saving days worth of time in future deployments.
-                </li>
-                <li>
-                    Final model reduced classification time by 2x over non neural network approach.
-                </li>
-            </ul>
-        </div>
-        <div class='project-description'>
-            <div style="margin: 4px">
-                <b>Technology:</b> Python 3, Pandas, Pillow, Numpy, PyTorch, Sklearn, Slurm, MIT LL Super Computer,
-                Jupyter Notebooks
-            </div>
-        </div>
-    </div>
-    <div id='olympus-intern' class='project'>
-        <div class='project-title' style="display: block">
-            <div>
-                <b>Software Engineer Intern</b>
-                <span style="float: right">Jun 2018 - Aug 2018</span>
-            </div>
-            <div>
-                Olympus
-                <span style="float: right">Waltham, MA</span>
-            </div>
-        </div>
-        <div class='project-description'>
-            <div style="margin: 4px"></div>
-            <ul>
-                <li>
-                    Designed and developed a website to visualize metrics produced by a company product
-                </li>
-                <li>
-                    Implemented
-                    an interface that allows employees to set rules that when triggered send notifications about impending
-                    failure, so they can perform preventative maintenance.
-                </li>
-                <li>
-                    Saved thousands of dollars by creating a robust system to understand device alerts.
-                </li>
-                <li>
-                    Created a REST API for the backend, to provide a portable solution that could eventually be
-                    used across many platforms.
-                </li>
-            </ul>
-        </div>
-        <div class='project-description'>
-            <div style="margin: 4px">
-                <b>Technology:</b> Javascript, React, Node, MongoDB, Microsoft Azure, Material UI, Express
-            </div>
-        </div>
-    </div>
-</div>
-<!-- //// PROJECTS -->
-<div id="projects"></div>
-<div class='container-title-wrapper'>
-    <div>
-        <div class="container-title title-text">
-            Projects
-            <div class='backtotop-link' onclick='window.location.href="#top"'>
-                Top
-            </div>
-        </div>
-        <div class="container-title-sub">
-            <img src="https://raw.githubusercontent.com/AJWurts/Neural_Network/master/Part2Graph.png" width="45%"/>
 
-            <div class="goal-list">
-                <h2>Overarching Project Goals</h2>
-                <ol class="goals-section">
-                    <li>Improve Programming skills</li>
-                    <li>Learn new Libraries, Technologies, and Languages</li>
-                    <li>Learn new topics through programming</li>
-                    <li>Make cool stuff</li>
-                </ol>
+            <!-- MIT Lincoln Lab - Deep Learning -->
+            <div class="experience-card">
+                <div class="experience-header">
+                    <div class="experience-title-group">
+                        <h3 class="experience-title">Deep Learning Intern</h3>
+                        <span class="experience-company">MIT Lincoln Laboratory</span>
+                    </div>
+                    <div class="experience-meta">
+                        <span class="experience-date">May 2019 - Aug 2019</span>
+                        <span class="experience-location">Lexington, MA</span>
+                    </div>
+                </div>
+                <div class="experience-content">
+                    <ul class="experience-list">
+                        <li>Implemented state-of-art deep neural networks for person re-identification in camera surveillance systems</li>
+                        <li>Developed innovative image labeling application that reduced dataset labeling time by 5x</li>
+                        <li>Final model reduced classification time by 2x over non-neural network approach</li>
+                    </ul>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">PyTorch</span>
+                        <span class="tech-tag">Pandas</span>
+                        <span class="tech-tag">Sklearn</span>
+                    </div>
+                </div>
             </div>
-        </div>
-    </div>
-</div>
-<div class="content">
-    <div id='weathervis' class='project-wrapper'>
-        <div class='project-title'>
-                <span class='project-title-only' style="margin-top: auto; margin-bottom: auto">Pilot Weather
-                    Visualizations</span>
-            <span class='project-link' onclick='window.open("https:\/\/pilotweathervis.com")'>
-                    PilotWeatherVis.com
-                </span>
-            <span class='project-link' onclick='window.open("https:\/\/github.com/ajwurts/WeatherVis")'>
-                    Code - Github
-                </span>
-        </div>
-        <div class='project-description'>
-            <div class='project-description-text'>
-                <p style="margin-top: 0px; font-size: 18px;">
-                    <b>Role:</b>Creator
-                </p>
-                <p>
-                    &emsp;I created a user interface to help training pilots understand confusing weather forecasting
-                    systems such as METARs (weather now), and TAFs (weather soon). Visualizations created with weather
-                    data
-                    searchable for any airport in the US. Data sourced from the Aviation Weather Center.
-                </p>
-                <p>
-                    <b>Skills</b>: React, Node, JS, REST API, Express, D3js, NWS ADDS API, Github
-                </p>
-            </div>
-            <div class='project-description-image'>
-                <div class='project-link' onclick='window.open("https:\/\/pilotweathervis.com")'>
-                    <img style="width: 200px" src='./images/pilotweathervis_front.png'/>
+
+            <!-- Olympus -->
+            <div class="experience-card">
+                <div class="experience-header">
+                    <div class="experience-title-group">
+                        <h3 class="experience-title">Software Engineer Intern</h3>
+                        <span class="experience-company">Olympus</span>
+                    </div>
+                    <div class="experience-meta">
+                        <span class="experience-date">Jun 2018 - Aug 2018</span>
+                        <span class="experience-location">Waltham, MA</span>
+                    </div>
+                </div>
+                <div class="experience-content">
+                    <ul class="experience-list">
+                        <li>Designed and developed a website to visualize metrics produced by company products</li>
+                        <li>Implemented notification system for preventative maintenance alerts</li>
+                        <li>Created a REST API backend for portable cross-platform solutions</li>
+                    </ul>
+                    <div class="tech-stack">
+                        <span class="tech-tag">React</span>
+                        <span class="tech-tag">Node</span>
+                        <span class="tech-tag">MongoDB</span>
+                        <span class="tech-tag">Azure</span>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    <div id='nnimplementation' class='project-wrapper'>
-        <div class='project-title'>
-                <span class='project-title-only' style="margin-top: auto; margin-bottom: auto"> Neural Network
-                    Implementation</span>
-            <span class='project-link' onclick='window.open("https:\/\/github.com/ajwurts/Neural_Network")'>
-                    Code - Github
-                </span>
-        </div>
-        <div class='project-description'>
-            <div class='project-description-text'>
-                <p style="margin-top: 0px; font-size: 18px;">
-                    <b>Role:</b> Creator
-                </p>
-                <p>
-                    &emsp;Implemented a neural network from scratch that trains on the MNIST data set. The network
-                    architecture has
-                    two hidden layers composed of an adjustable amount of hidden neurons.
-                    Created a hyperparameter optimization algorithm that optimizes each hyperparameter individually
-                    and combines them together.
-                </p>
-                <p>
-                    <b>Skills</b>: Python, Numpy, Matplotlib, Scikit-Learn
-                </p>
-            </div>
-            <div class='project-description-image'>
+    </section>
 
-                <div class='project-link'
-                     onclick='window.open("https:\/\/play.google.com/store/apps/details?id=com.sigpit.alexwurts.solitare&hl=en_US")'>
-                    <img style="width: 200px"
-                         src='https://raw.githubusercontent.com/AJWurts/Neural_Network/master/Part2Graph.png'/>
-                </div>
-                Visualization of Gradient Descent Training
-            </div>
-        </div>
-    </div>
-    <div id='bestroutes' class='project-wrapper'>
-        <div class='project-title'>
-            <span class='project-title-only' style="margin-top: auto; margin-bottom: auto">Best Routes</span>
-            <span class='project-link' onclick='window.open("https:\/\/www.BestRoutes.io")'>
-                    BestRoutes.io
-                </span>
-        </div>
-        <div class='project-description'>
-            <div class='project-description-text'>
-                <p style="margin-top: 0px; font-size: 18px;">
-                    <b>Role:</b> Creator
-                </p>
-                <p>
-                    &emsp;Developed a full-stack web app to create a
-                    user-sourced database of the best rides and runs in a certain area. Utilizes a React,
-                    Express, Node, MongoDB Stack. Retrieves data automatically from Strava API and Google API.
-                    Code available upon request.
-                </p>
-                <p>
-                    <b>Skills</b>: Reactjs, Nodejs, Expressjs, MongoDB, Google Cloud Platform, Leaflet Maps,
-                    D3js, Google Maps API, Strava API, Material UI
-                </p>
-            </div>
-            <div class='project-description-image'>
-                <div class='project-link' onclick='window.open("https:\/\/www.BestRoutes.io")'>
-                    <img style="width: 200px" src='./images/bestroutes_vertical.png'/>
+    <!-- About Section -->
+    <section id="about" class="section section-alt">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <img src="./images/profile_picture.jpeg" alt="Alex Wurts" class="about-image">
+                <div class="about-text">
+                    <p>I'm a software engineer with a passion for building products that make a real impact. With a background in Computer Science and Data Science from Worcester Polytechnic Institute, I've worked across the full stack—from deep learning models to mobile apps to scalable backend systems.</p>
+                    <p>Currently, I'm helping build the future of AI-powered productivity tools at Coworker.ai. Previously, I led mobile development at The Routing Company, scaling transit apps from zero to 100k+ trips.</p>
+                    <p>Outside of coding, I'm a licensed private pilot who trained at Hanscom Airport. I believe the best engineers are also lifelong learners, and I try to share what I learn through articles and tutorials.</p>
                 </div>
             </div>
         </div>
-    </div>
-    <div id='bestroutes' class='project-wrapper'>
-        <div class='project-title'>
-            <span class='project-title-only' style="margin-top: auto; margin-bottom: auto">Resumace</span>
-            <span class='project-link' onclick='window.open("https:\/\/www.theResumace.com")'>
-                    Resumace
-                </span>
-        </div>
-        <div class='project-description'>
-            <div class='project-description-text'>
-                <p style="margin-top: 0px; font-size: 18px;">
-                    <b>Role:</b> Creator
-                </p>
-                <p>
-                    &emsp; When applying to new jobs it is time-consuming to customize a resume for the specific job.
-                    When completed my application will allow a
-                    user to create a new resume in as little as 30 seconds. Additionally, formatting resumes can be
-                    difficult and prone to errors. The application formats the data automatically and allows the
-                    user to select different styles. Utilizes a React, Express, Node, MySQL
-                    database Stack.
-                </p>
-                <p>
-                    <b>Skills</b>: React, Node, Express, MySQL, Google Cloud Platform, Square Payments, HTML, CSS,
-                    Javascript
+    </section>
 
-                </p>
-            </div>
-            <div class='project-description-image'>
-                <div class='project-link' onclick='window.open("https:\/\/www.theresumace.com")'>
-                    <img style="width: 200px" src='./images/resumace_front_thin.png'/>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2024 Alex Wurts</p>
+                <div class="footer-links">
+                    <a href="https://github.com/ajwurts/" target="_blank">GitHub</a>
+                    <a href="https://linkedin.com/in/alexwurts" target="_blank">LinkedIn</a>
                 </div>
             </div>
         </div>
-    </div>
-    <div id='android-solitaire' class='project-wrapper'>
-        <div class='project-title'>
-            <span class='project-title-only' style="margin-top: auto; margin-bottom: auto"> Android Solitaire</span>
-            <span class='project-link'
-                  onclick='window.open("https:\/\/play.google.com/store/apps/details?id=com.sigpit.alexwurts.solitare&hl=en_US")'>
-                    Google Play Store
-                </span>
-            <span class='project-link' onclick='window.open("https:\/\/github.com/ajwurts/AndroidSolitaire")'>
-                    Code - Github
-                </span>
-        </div>
-        <div class='project-description'>
-            <div class='project-description-text'>
-                <p style="margin-top: 0px; font-size: 18px;">
-                    <b>Role:</b> Creator
-                </p>
-                <p>
-                    &emsp;Developed Solitaire to create a version with no ads. Released on Google Play. Follow the link
-                    for more details.
-                </p>
-                <p>
-                    <b>Skills</b>: Java, Android Studio, Canvas, Google Play Store
-                </p>
-            </div>
-            <div class='project-description-image'>
-                <div class='project-link'
-                     onclick='window.open("https:\/\/play.google.com/store/apps/details?id=com.sigpit.alexwurts.solitare&hl=en_US")'>
-                    <img style="width: 200px" src='./images/solitaire_logo.webp'/>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div id='cira' class='project-wrapper'>
-        <div class='project-title'>
-                <span class='project-title-only' style="margin-top: auto; margin-bottom: auto"> CIRA: Chromosome Image
-                    Recognition Algorithm</span>
-            <span class='project-link' onclick='window.open("https:\/\/github.com/ajwurts/CIRA_ML")'>
-                    Code - Github
-                </span>
-        </div>
-        <div class='project-description'>
-            <div class='project-description-text'>
-                <p style="margin-top: 0px; font-size: 18px;">
-                    <b>Role:</b> Group Member
-                </p>
-                <p>
-                    &emsp;Developed a machine learning algorithm to predict the health of new cells. Used K-Means to
-                    cluster all known cells into 2 groups, and then new cells were labeled according to the nearest
-                    group. The Accuracy was 79.1%. Multi-Level Perceptron attained an accuracy of 86.025% and
-                    Logistic Regression was 87%.
-                </p>
-                <p>
-                    <b>Skills</b>: Python, Numpy, Matplotlib, Scikit-learn, Scipy, Anaconda, Pillow
-                </p>
-            </div>
-            <div class='project-description-image'>
-
-                <div class='project-link'
-                     onclick='window.open("https:\/\/play.google.com/store/apps/details?id=com.sigpit.alexwurts.solitare&hl=en_US")'>
-                    <img style="width: 200px"
-                         src='https://raw.githubusercontent.com/AJWurts/CIRA_ML/master/Image%20Results/HealthyVSCancer20Clusters.png'/>
-                </div>
-                Example Clustering of Cells.
-            </div>
-        </div>
-    </div>
-    <div id='ridevis' class='project-wrapper'>
-        <div class='project-title'>
-                <span class='project-title-only' style="margin-top: auto; margin-bottom: auto">
-                    RideVis: An Improved Strava Visualization</span>
-            <span class='project-link' onclick='window.open("http:\/\/alexwurts.com/RideVis")'>
-                    Ride Vis
-                </span>
-            <span class='project-link' onclick='window.open("https:\/\/github.com/ajwurts/CIRA_ML")'>
-                    Code - Github
-                </span>
-        </div>
-        <div class='project-description'>
-            <div class='project-description-text'>
-                <p style="margin-top: 0px; font-size: 18px;">
-                    <b>Role:</b> Created for Data Vis Class
-                </p>
-                <p>
-                    &emsp;Re-made the Strava Profile Visualization. Aggregates my Strava ride data using python into
-                    varying time chunks. Then uses D3js to plot them and make it interactive. Click on the column to
-                    zoom into that period, and click again to pull up the Strava ride.
-                </p>
-                <p>
-                    <b>Skills</b>: Python, Numpy, Pandas, Javascript, D3, Github
-                </p>
-            </div>
-            <div class='project-description-image'>
-
-                <div class='project-link' onclick='window.open("http:\/\/alexwurts.com/RideVis")'>
-                    <img style="width: 200px" src='./images/ridevis.png'/>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+    </footer>
 </body>
+</html>
