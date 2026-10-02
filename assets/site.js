@@ -11,7 +11,7 @@
 
   // ---------- signature ----------
   sigSvg.style.setProperty("--sig-ar", (window.SIGNATURE.width / window.SIGNATURE.height).toFixed(3));
-  var player = new Ink.Player(sigSvg, window.SIGNATURE);
+  var player = new Ink.Player(sigSvg, window.SIGNATURE, { openEnd: true });
   var signed = false;
   function onSigned() {
     signed = true;
@@ -75,6 +75,32 @@
   // the line is a few separate paths (it hops across each doodle); one
   // running length is spread across them
   var segs = [], total = 0, samplesY = [], sampleStep = 1, anchors = [], cueLen = 0;
+  // the pen flick carries on into the line: it leaves at the signature's ink
+  // width and thins to the hairline over TAPER_LEN px
+  var TAPER_LEN = 220, HAIR = 1.4, taperEl = null, taperW0 = HAIR, taperShown = -1;
+  function endInkWidth() {
+    var ws = player.widths[player.widths.length - 1];
+    var m = sigSvg.getScreenCTM();
+    return ws && ws.length && m ? ws[ws.length - 1] * Math.hypot(m.a, m.b) : HAIR;
+  }
+  function drawTaper(L) {
+    L = Math.min(L, TAPER_LEN, total);
+    if (L === taperShown) return;
+    taperShown = L;
+    if (L < 1) { taperEl.setAttribute("d", ""); return; }
+    var n = Math.max(2, Math.ceil(L / 4)), left = [], right = [];
+    for (var i = 0; i <= n; i++) {
+      var l = (L * i) / n, a = pointAt(Math.max(0, l - 1)), b = pointAt(Math.min(total, l + 1));
+      var dx = b.x - a.x, dy = b.y - a.y, len = Math.hypot(dx, dy) || 1;
+      var k = l / TAPER_LEN, h = (HAIR + (taperW0 - HAIR) * Math.pow(1 - k, 1.6)) / 2;
+      var c = pointAt(l);
+      left.push(f(c.x - (dy / len) * h) + " " + f(c.y + (dx / len) * h));
+      right.push(f(c.x + (dy / len) * h) + " " + f(c.y - (dx / len) * h));
+    }
+    var c0 = pointAt(0), r = taperW0 / 2;
+    taperEl.setAttribute("d", "M" + left.join("L") + "L" + right.reverse().join("L") + "Z" +
+      "M" + f(c0.x - r) + " " + f(c0.y) + "a" + f(r) + " " + f(r) + " 0 1 0 " + f(2 * r) + " 0a" + f(r) + " " + f(r) + " 0 1 0 " + f(-2 * r) + " 0Z");
+  }
   var introStart = 0, INTRO_MS = 900;
 
   function pageXY(svg, x, y) {
@@ -171,6 +197,12 @@
       total += len;
     });
 
+    taperW0 = Math.max(HAIR, endInkWidth());
+    taperEl = document.createElementNS("http://www.w3.org/2000/svg", "path");
+    taperEl.setAttribute("class", "taper");
+    trail.appendChild(taperEl);
+    taperShown = -1;
+
     // y along the line, made monotone, so scroll depth maps to drawn length
     var n = Math.min(4000, Math.ceil(total / 6));
     sampleStep = total / n;
@@ -227,6 +259,7 @@
     if (Math.abs(target - next) < 0.5) next = target; else again = true;
     if (next !== drawn) {
       drawn = next;
+      drawTaper(drawn);
       for (var j = 0; j < segs.length; j++) {
         var sg = segs[j], show = Math.max(0, Math.min(sg.len, drawn - sg.start));
         if (show !== sg.shown) {
@@ -234,7 +267,6 @@
           sg.el.style.strokeDashoffset = sg.len - show;
           sg.el.style.visibility = show > 0.5 ? "visible" : "hidden";
         }
-      }
       }
     }
     if (signed) {

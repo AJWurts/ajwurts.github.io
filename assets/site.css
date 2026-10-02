@@ -23,6 +23,9 @@
   --plane-hub: #c4c4c4;
   --plane-tire: #16181d;
   --plane-prop: var(--ink);
+  --mtn-rock: #b5b5b5;
+  --mtn-snow: #ffffff;
+  --mtn-grass: #648c56;
   --lab-coat: #e9c989;
   --lab-coat-far: #d6b06b;
   --lab-ear: #ddb877;
@@ -50,6 +53,9 @@
     --plane-maroon: #a24c4c;
     --plane-hub: #a8a8a8;
     --plane-tire: #070708;
+    --mtn-rock: #7d7c7a;
+    --mtn-snow: #e9e5dc;
+    --mtn-grass: #557a49;
     --lab-coat: #d2b277;
     --lab-coat-far: #b39459;
     --lab-ear: #c3a267;
@@ -77,6 +83,9 @@
   --plane-maroon: #a24c4c;
   --plane-hub: #a8a8a8;
   --plane-tire: #070708;
+  --mtn-rock: #7d7c7a;
+  --mtn-snow: #e9e5dc;
+  --mtn-grass: #557a49;
   --lab-coat: #d2b277;
   --lab-coat-far: #b39459;
   --lab-ear: #c3a267;
@@ -123,6 +132,7 @@ a:hover, a:focus-visible { color: var(--accent); text-decoration-color: currentC
 
 /* the scroll line */
 .trail { position: absolute; left: 0; top: 0; width: 100%; pointer-events: none; overflow: visible; z-index: 0; }
+.trail path.taper { fill: var(--ink); stroke: none; opacity: 1; }
 .trail path { fill: none; stroke: var(--ink); stroke-width: 1.4; stroke-linecap: round; stroke-linejoin: round; opacity: 0.85; }
 
 main, .hero, .foot { position: relative; z-index: 1; }
@@ -162,13 +172,13 @@ main, .hero, .foot { position: relative; z-index: 1; }
 .doodle path { fill: none; stroke: var(--ink); stroke-width: var(--sw, 1.5); stroke-linecap: round; stroke-linejoin: round;
   stroke-dasharray: 1 1; stroke-dashoffset: 1; visibility: hidden;
   transition: stroke-dashoffset var(--dur, 0.5s) cubic-bezier(.45, .05, .4, 1) var(--delay, 0s), visibility 0s linear var(--delay, 0s); }
-.doodle path.thin { stroke-width: 1.1; opacity: 0.7; }
 .doodle.on path { stroke-dashoffset: 0; visibility: visible; }
 .doodle [data-in], .doodle [data-out] { display: none; }
 /* colored doodles: ink outline first, then the color washes in under it */
 .doodle.color { height: auto; }
 .doodle[data-doodle="bike"] { width: 118px; --sw: 2.1; }
 .doodle[data-doodle="plane"] { width: 128px; --sw: 2.1; }
+.doodle[data-doodle="hike"] { width: 118px; --sw: 2.1; }
 .doodle .wash { opacity: 0; clip-path: inset(0 100% 0 0); transition: opacity 0.42s ease-out var(--wash-delay, 0s), clip-path 0.42s cubic-bezier(.3, .1, .3, 1) var(--wash-delay, 0s); }
 .doodle.on .wash { opacity: 1; clip-path: inset(0 0 0 0); }
 .doodle .wash path, .doodle .wash circle { stroke: none; stroke-dasharray: none; visibility: visible; transition: none; }
@@ -181,12 +191,13 @@ main, .hero, .foot { position: relative; z-index: 1; }
   .doodle.color { height: auto; }
   .doodle[data-doodle="plane"] { width: clamp(200px, 50vw - 370px, 270px); top: -4px; --sw: 1.2; }
   .doodle[data-doodle="bike"] { width: clamp(190px, 50vw - 380px, 240px); top: -6px; --sw: 1.15; }
+  .doodle[data-doodle="hike"] { width: clamp(190px, 50vw - 380px, 240px); top: 4px; --sw: 1.15; }
   .fun-item.fun-bike { min-height: 168px; }
   .doodle [data-in], .doodle [data-out] { display: inline; }
 }
 
 /* the labs */
-.labs { position: relative; height: 300px; margin: 6vh 0 4vh; cursor: pointer; -webkit-tap-highlight-color: transparent; outline-offset: -6px; }
+.labs { position: relative; height: 350px; margin: 6vh 0 4vh; cursor: pointer; -webkit-tap-highlight-color: transparent; outline-offset: -6px; }
 .labs svg { display: block; width: 100%; height: 100%; overflow: hidden; }
 .labs .ground { fill: none; stroke: var(--ink); stroke-width: 1.4; stroke-linecap: round; stroke-dasharray: 1 1; stroke-dashoffset: 1; opacity: 0.85; }
 .labs .drawn .ground { stroke-dashoffset: 0; transition: stroke-dashoffset 0.7s ease-out; }
@@ -200,6 +211,8 @@ main, .hero, .foot { position: relative; z-index: 1; }
 .dog .thin { stroke-width: 1.1; }
 .dog .dot { fill: var(--ink); }
 .dog .nose { fill: var(--lab-nose); stroke: var(--lab-nose-ring); stroke-width: 0.9; stroke-linejoin: round; }
+.labs .name { fill: none; stroke: var(--ink); stroke-linecap: round; stroke-linejoin: round; opacity: 0; }
+.labs .name path { visibility: hidden; }
 .replay { position: absolute; right: 24px; bottom: 0; margin: 0; color: var(--ink-faint); opacity: 0; transition: opacity 0.6s; }
 .labs.done .replay, .labs:hover .replay { opacity: 1; }
 
@@ -243,10 +256,9 @@ main, .hero, .foot { position: relative; z-index: 1; }
   .intro p { font-size: 19px; }
   .doodle { width: 84px; height: 53px; }
   .doodle { --sw: 2.6; }
-  .doodle path.thin { stroke-width: 1.8; }
   .fun-item { gap: 16px; margin-bottom: 34px; }
   .fun-item h3 { font-size: 22px; }
-  .labs { height: 190px; }
+  .labs { height: 222px; }
   .job h3 { font-size: 23px; }
   .role li { font-size: 16.5px; }
   .writing a { font-size: 19px; }
