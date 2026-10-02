@@ -157,7 +157,8 @@
       var prev = Q, w = 34;
       doodles.forEach(function (svg) {
         var a = pathEnd(svg, "[data-in]", false), b = pathEnd(svg, "[data-out]", true);
-        parts.push(d + seg(prev, a, w));
+        // short hops get a smaller sideways swing so they don't kink into an S
+        parts.push(d + seg(prev, a, w * Math.min(1, Math.abs(a.y - prev.y) / 260)));
         d = "M" + f(b.x) + " " + f(b.y);
         anchors.push({ el: svg, y: a.y });
         prev = b; w = -w;
