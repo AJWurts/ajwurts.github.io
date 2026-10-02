@@ -221,7 +221,7 @@
   var NAME_ROOM = 44;    // extra band below the ground, in dog units
   // [name, track index, write start (s), x offset under the dog in dog units]
   var NAME_PLAN = [["Norman", 0, 3.86, 8], ["Maui", 1, 4.06, -8]];
-  var WRITE = 0.6, FADE_AT = 4.68, FADE = 0.28;
+  var WRITE = 0.6;
 
   // ---------- the scene ----------
   function clone(o, extra) { var c = {}, k; for (k in o) c[k] = o[k]; for (k in extra) c[k] = extra[k]; return c; }
@@ -352,12 +352,12 @@
     if (!this.running) this.render(this.t);
   };
 
-  /* Names sit centered under where each dog bows, a little below the ground. */
+  /* Names are laid out around x = 0, a little below the ground; render()
+     slides each one along under its dog, so it leaves the band with it. */
   Scene.prototype.layoutNames = function () {
-    var self = this, cap = NAME_CAP * this.s, top = this.gy + 9 * this.s + cap;
+    var self = this, cap = NAME_CAP * this.s, top = this.gy + 13 * this.s + cap;
     this.names.forEach(function (nm) {
-      var tr = self.tracks[nm.plan[1]], bow = tr.segs.filter(function (sg) { return sg.mode === "bow"; })[0];
-      var cx = (bow.x0 + nm.plan[3] * tr.scale) * self.s;
+      var cx = nm.plan[3] * self.tracks[nm.plan[1]].scale * self.s;
       var data = NAMES[nm.plan[0]];
       nm.total = 0;
       nm.paths.forEach(function (p, i) {
@@ -372,14 +372,17 @@
     });
   };
 
-  /* Write each name stroke by stroke as one continuous pen run, then fade. */
-  Scene.prototype.renderNames = function (t) {
+  /* Write each name stroke by stroke as one continuous pen run; it then
+     stays put under its dog. xs: each dog's x in scene units (null if hidden). */
+  Scene.prototype.renderNames = function (t, xs) {
     var self = this;
     this.names.forEach(function (nm) {
+      var x = xs[nm.plan[1]];
       var u = self.isStill ? 1 : Math.max(0, Math.min(1, (t - nm.plan[2]) / WRITE));
-      var op = self.isStill ? 1 : 1 - Math.max(0, Math.min(1, (t - FADE_AT) / FADE));
+      if (x == null) u = 0;
       var show = u * nm.total;
-      nm.g.style.opacity = u > 0 ? op.toFixed(3) : "0";
+      nm.g.style.opacity = u > 0 ? "1" : "0";
+      if (u > 0) nm.g.setAttribute("transform", "translate(" + f1(x * self.s) + " 0)");
       for (var i = 0; i < nm.paths.length; i++) {
         var L = nm.lens[i], vis = Math.max(0, Math.min(L, show));
         show -= L;
@@ -393,9 +396,10 @@
   Scene.prototype.setGroundStart = function (x) { this.groundStart = x; this.layout(); };
 
   Scene.prototype.render = function (t) {
-    this.renderNames(t);
+    var xs = [];
     for (var i = 0; i < 2; i++) {
       var dog = this.dogs[i], tr = this.tracks[i], st = sample(tr, t);
+      xs[i] = st ? st.x : null;
       if (!st) { dog.g.style.display = "none"; dog.key = ""; continue; }
       dog.g.style.display = "";
       var sc = this.s * tr.scale;
@@ -407,6 +411,7 @@
         dog.key = key;
       }
     }
+    this.renderNames(t, xs);
   };
 
   Scene.prototype.play = function () {

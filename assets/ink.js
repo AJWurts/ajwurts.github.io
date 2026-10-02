@@ -14,7 +14,7 @@
 
   /* Pressure is only trusted when it actually varies (mice report a flat 0.5,
      some devices 0 or 1). Otherwise width comes from pen speed: slow = wet. */
-  function widths(pts, base) {
+  function widths(pts, base, openEnd) {
     var n = pts.length, out = new Array(n), i;
     var ps = pts.map(function (p) { return p.p; });
     var real = ps.every(function (v) { return typeof v === "number"; }) &&
@@ -35,7 +35,7 @@
         var j = i + k;
         if (j >= 0 && j < n) { s += raw[j]; c++; }
       }
-      var taper = Math.min(1, (i + 1) / 5, (n - i) / 6 + 0.25);
+      var taper = Math.min(1, (i + 1) / 5, openEnd ? 1 : (n - i) / 6 + 0.25);
       out[i] = base * (0.42 + 0.75 * (s / c)) * (0.45 + 0.55 * taper);
     }
     return out;
@@ -142,7 +142,8 @@
     this.paths = sig.strokes.map(function () { var p = el("path", {}); g.appendChild(p); return p; });
     this.joints = sig.strokes.map(function () { var p = el("path", {}); g.appendChild(p); return p; });
     this.cusps = sig.strokes.map(cusps);
-    this.widths = sig.strokes.map(function (s) { return widths(s, this.base); }, this);
+    // openEnd: the last stroke ends at full width because something carries it on
+    this.widths = sig.strokes.map(function (s, i) { return widths(s, this.base, opts.openEnd && i === sig.strokes.length - 1); }, this);
     this.raf = 0;
   }
 
